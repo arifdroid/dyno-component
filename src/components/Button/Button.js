@@ -64,8 +64,7 @@ const Button = ({ label, variant, ...props }) => {
     >{label}</ButtonStyled>;
 }
 
-Button.defaultProps = {
-    type: 'button',
+Button.defaultProps = {    
     variant: 'primary'
 }
 
