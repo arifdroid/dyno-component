@@ -2,37 +2,49 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Switch.css'
 
-const Switch = ({ variant, onChecked, containerStyle, labelStyle, inputStyle, inputSliderStyle, classNameSlider }) => {
+const Switch = (props) => {
+
+    const { variant, onChecked,
+        containerStyle, labelStyle,
+        inputStyle, inputSliderStyle,
+        classNameSlider } = props
 
     const onToggle = (e) => onChecked(e.target.checked)
 
 
 
-    if (variant === 'secondary') {
+    switch (variant) {
 
-        return (
-            <div className="flex" style={containerStyle}>
-                <label className="switch-secondary" style={labelStyle}>
-                    <input type="checkbox" onChange={onToggle} style={inputStyle} />
-                    <span className="slider-secondary round" style={inputSliderStyle}></span>
-                </label>
-            </div>
-        )
+        case 'secondary':
+            return (
+                <div className="flex" style={containerStyle}>
+                    <label className="switch-secondary" style={labelStyle}>
+                        <input type="checkbox" onChange={onToggle} style={inputStyle} />
+                        <span className="slider-secondary round" style={inputSliderStyle}></span>
+                    </label>
+                </div>
+            )
 
-    } else {
+        case 'switch-material':
 
-        const classNameSliderT = classNameSlider ? classNameSlider : 'slider round'
+            let SwitchMaterial = require('@mui/material/Switch').default;
 
-        return (
-            <div style={containerStyle}>
-                <label className="switch" style={labelStyle} >
-                    <input type="checkbox" onChange={onToggle} style={inputStyle} />
-                    <span className={classNameSliderT} style={inputSliderStyle}></span>
-                </label>
-            </div>
-        )
+            return (<SwitchMaterial
+                onChange={onToggle}
+                inputProps={{ 'aria-label': 'controlled' }}
+            />)
+
+        default:
+            const classNameSliderT = classNameSlider ? classNameSlider : 'slider round'
+            return (
+                <div style={containerStyle}>
+                    <label className="switch" style={labelStyle} >
+                        <input type="checkbox" onChange={onToggle} style={inputStyle} />
+                        <span className={classNameSliderT} style={inputSliderStyle}></span>
+                    </label>
+                </div>
+            )
     }
-
 }
 
 Switch.defaultProps = {

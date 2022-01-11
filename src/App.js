@@ -10,7 +10,7 @@ function App() {
       <div className='contain-section'>
         <Button
           className='button-primary'
-          onClick={()=>{}}
+          onClick={() => { }}
           style={{ alignSelf: 'center' }}>Button with any style</Button>
 
         <Button
@@ -29,9 +29,10 @@ function App() {
         <BaseButton style={{ marginLeft: 50 }} variant={'outlined'}>Base Button</BaseButton>
       </div>
 
-      <div className='contain-section'>        
-        <Switch containerStyle={{ marginRight: 40 }}  onChecked={(val)=>{ console.log('click', val)}} />
+      <div className='contain-section'>
+        <Switch containerStyle={{ marginRight: 40 }} onChecked={(val) => { console.log('click', val) }} />
         <Switch variant={'secondary'} />
+        <Switch variant={'switch-material'} onChecked={(val) => { console.log('click material', val) }}/>
       </div>
 
     </div>
