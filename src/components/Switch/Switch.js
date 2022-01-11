@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Switch.css'
 
-const Switch = ({ variant, onChecked, containerStyle, labelStyle, inputStyle }) => {
+const Switch = ({ variant, onChecked, containerStyle, labelStyle, inputStyle, inputThumbStyle }) => {
 
     const onToggle = (e) => onChecked(e.target.checked)
 
@@ -12,7 +12,7 @@ const Switch = ({ variant, onChecked, containerStyle, labelStyle, inputStyle }) 
             <div className="flex" style={containerStyle}>
                 <label className="switch-secondary" style={labelStyle}>
                     <input type="checkbox" onChange={onToggle} style={inputStyle} />
-                    <span className="slider-secondary round"></span>
+                    <span className="slider-secondary round" style={inputThumbStyle}></span>
                 </label>
             </div>
         )
@@ -23,7 +23,7 @@ const Switch = ({ variant, onChecked, containerStyle, labelStyle, inputStyle }) 
             <div className="flex" style={containerStyle}>
                 <label className="switch" style={labelStyle}>
                     <input type="checkbox" onChange={onToggle} style={inputStyle} />
-                    <span className="slider round"></span>
+                    <span className="slider round" style={inputThumbStyle}></span>
                 </label>
             </div>
         )
