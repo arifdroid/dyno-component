@@ -31,3 +31,9 @@
   display: inline-block;
   cursor: grab;
 }
+
+.flex-switch-container {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}

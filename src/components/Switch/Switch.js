@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Switch.css'
 
-const Switch = ({ variant, onChecked, containerStyle, labelStyle, inputStyle, inputThumbStyle }) => {
+const Switch = ({ variant, onChecked, containerStyle, labelStyle, inputStyle, inputSliderStyle, classNameSlider }) => {
 
     const onToggle = (e) => onChecked(e.target.checked)
+
+
 
     if (variant === 'secondary') {
 
@@ -12,18 +14,20 @@ const Switch = ({ variant, onChecked, containerStyle, labelStyle, inputStyle, in
             <div className="flex" style={containerStyle}>
                 <label className="switch-secondary" style={labelStyle}>
                     <input type="checkbox" onChange={onToggle} style={inputStyle} />
-                    <span className="slider-secondary round" style={inputThumbStyle}></span>
+                    <span className="slider-secondary round" style={inputSliderStyle}></span>
                 </label>
             </div>
         )
 
     } else {
 
+        const classNameSliderT = classNameSlider ? classNameSlider : 'slider round'
+
         return (
-            <div className="flex" style={containerStyle}>
-                <label className="switch" style={labelStyle}>
+            <div style={containerStyle}>
+                <label className="switch" style={labelStyle} >
                     <input type="checkbox" onChange={onToggle} style={inputStyle} />
-                    <span className="slider round" style={inputThumbStyle}></span>
+                    <span className={classNameSliderT} style={inputSliderStyle}></span>
                 </label>
             </div>
         )

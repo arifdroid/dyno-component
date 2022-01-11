@@ -29,8 +29,8 @@ function App() {
         <BaseButton style={{ marginLeft: 50 }} variant={'outlined'}>Base Button</BaseButton>
       </div>
 
-      <div className='contain-section'>
-        <Switch containerStyle={{ marginRight: 40 }}  onChecked={(val)=>{ console.log('click', val)}}/>
+      <div className='contain-section'>        
+        <Switch containerStyle={{ marginRight: 40 }}  onChecked={(val)=>{ console.log('click', val)}} />
         <Switch variant={'secondary'} />
       </div>
 
