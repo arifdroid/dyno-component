@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './BaseButton.css'
 
-const BaseButton = ({ variant,  ...props }) => {
+const BaseButton = ({ variant,  ...props }) => { // --> arrow function 
 
     return <button
         className={`base-button-${variant}`}

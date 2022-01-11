@@ -2,14 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Switch.css'
 
-const Switch = ({ variant, ...props }) => {
+const Switch = ({ variant, onChecked, containerStyle, labelStyle, inputStyle }) => {
+
+    const onToggle = (e) => onChecked(e.target.checked)
 
     if (variant === 'secondary') {
 
         return (
-            <div className="flex" >
-                <label className="switch-secondary">
-                    <input type="checkbox" />
+            <div className="flex" style={containerStyle}>
+                <label className="switch-secondary" style={labelStyle}>
+                    <input type="checkbox" onChange={onToggle} style={inputStyle} />
                     <span className="slider-secondary round"></span>
                 </label>
             </div>
@@ -18,9 +20,9 @@ const Switch = ({ variant, ...props }) => {
     } else {
 
         return (
-            <div className="flex" {...props}>
-                <label className="switch">
-                    <input type="checkbox" />
+            <div className="flex" style={containerStyle}>
+                <label className="switch" style={labelStyle}>
+                    <input type="checkbox" onChange={onToggle} style={inputStyle} />
                     <span className="slider round"></span>
                 </label>
             </div>
@@ -30,7 +32,7 @@ const Switch = ({ variant, ...props }) => {
 }
 
 Switch.defaultProps = {
-    variant: 'secondary'
+    variant: 'primary'
 }
 
 Switch.propTypes = {
