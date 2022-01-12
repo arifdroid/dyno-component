@@ -44,7 +44,9 @@ export default function MainView() {
             <div style={{ margin: 20 }}></div>
             {/* Lesson Paypal */}
 
+
             <Usage />
+
 
         </div>
     )
