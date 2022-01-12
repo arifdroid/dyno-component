@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Switch.css'
 
+//build the molecule itself
+
 const Switch = (props) => {
 
     const { variant, onChecked,

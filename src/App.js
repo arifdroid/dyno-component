@@ -20,7 +20,8 @@ function App() {
         <Button
           variant={'outlined'}
           label={'Outlined Button'}
-          style={{ alignSelf: 'center', marginLeft: 40 }} />
+          style={{ alignSelf: 'center', marginLeft: 40 }} 
+          />
       </div>
 
       <div className='contain-section'>
