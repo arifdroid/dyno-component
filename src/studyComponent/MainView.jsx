@@ -1,4 +1,6 @@
 import React from 'react'
+import Checkbox from '../components/Checkbox/Checkbox'
+import TextBox from '../components/TextBox/TextBox'
 import ButtonComponent from './ButtonComponent'
 import Usage from './Paypal_developer/ClassStyle/SwitchPpal'
 
@@ -46,6 +48,9 @@ export default function MainView() {
 
 
             <Usage />
+
+            <div style={{ margin: 20 }}></div>
+            <TextBox />
 
 
         </div>
