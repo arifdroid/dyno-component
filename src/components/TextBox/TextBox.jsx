@@ -39,22 +39,29 @@ class TextArea extends Component {
 
 
 
-function TextBox({ label }) {
+function TextBox({ label, labelPosition }) {
 
     return (
 
         <TextArea >
             {({ textValueProp, inputValueProp }) => {
-                
-                return (
-                    <>
-                        <TextField
-                            id="standard-basic" variant="outlined"
-                            style={{ width: 200 }}
-                            onChange={textValueProp}
-                        />
-                    </>
-                )
+
+                switch (labelPosition) {
+
+                    default:
+                        return (
+                            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                <Typography>{label}</Typography>
+                                <TextField
+                                    id="standard-basic" variant="outlined"
+                                    style={{ width: 200 }}
+                                    onChange={textValueProp}
+                                />
+                            </div>
+                        )
+                }
+
+
             }}</TextArea>
 
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import Checkbox from '../components/Checkbox/Checkbox'
 import TextBox from '../components/TextBox/TextBox'
+import TextBoxBasic from '../components/TextBoxBasic/TextBoxBasic'
 import ButtonComponent from './ButtonComponent'
 import Usage from './Paypal_developer/ClassStyle/SwitchPpal'
 
@@ -50,7 +51,20 @@ export default function MainView() {
             <Usage />
 
             <div style={{ margin: 20 }}></div>
-            <TextBox />
+            {/* <TextBox label={'top'}></TextBox> */}
+
+            <TextBoxBasic
+                label={'Account Number'}
+                labelPosition={'top'}
+                containerStyle={{}}
+                typographyStyle={{ color: 'blue' }}
+                textFieldStyle={{ width: 400 }}
+                textValueProp={(e) => { console.log('text',e.target.value) }}
+
+
+            ></TextBoxBasic>
+
+
 
 
         </div>
