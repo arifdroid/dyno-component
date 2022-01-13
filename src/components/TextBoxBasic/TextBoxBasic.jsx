@@ -3,30 +3,48 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types'
 
+let containerFlexDirection = 'column';
+
 function TextBoxBasic({ label, labelPosition, ...props }) {
 
-    const { containerStyle, containerProps,
-        typographyStyle, textFieldStyle,
-        textValueProp } = props
+    const { containerStyle,
+        typographyStyle,
+        textFieldStyle,
+        textValueProp,
+        textFieldVariant
+    } = props
 
-    let containerFlexDirection = 'column';
+
     if (labelPosition === 'left') containerFlexDirection = 'row'
     if (labelPosition === 'right') containerFlexDirection = 'row-reverse'
     if (labelPosition === 'bottom') containerFlexDirection = 'column-reverse'
 
 
     return (
-        <div style={{ display: 'flex', flexDirection: containerFlexDirection, alignSelf: 'flex-start', ...containerStyle }} {...containerProps}>
+        <div style={{ ...containerStyle }}>
             <Typography style={{ ...typographyStyle }}>{label}</Typography>
             <TextField
-                id="standard-basic" variant="outlined"
-                style={{ width: 200, ...textFieldStyle }}
+                variant={textFieldVariant}
+                style={{ ...textFieldStyle }}
                 onChange={textValueProp}
-
+                // missing border radius inline styling
+                
             />
         </div>
     )
 }
+
+TextBoxBasic.defaultProps = {
+    containerStyle: { display: 'flex', flexDirection: containerFlexDirection, alignSelf: 'flex-start' },
+    textFieldStyle: { width: 300 },
+    textFieldVariant: 'outlined'
+}
+
+TextBoxBasic.propTypes = {
+    
+    textFieldVariant: PropTypes.oneOf(['primary','outlined','filled']),
+}
+
 
 
 export default TextBoxBasic;
